@@ -16,6 +16,13 @@ app.use((req,res, next)=>{
     next();
 })
 
+//to avoid cors error
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+})
+
+
 //error handler
 app.use(function(req,res){
     res.status(404).send("File not found")
