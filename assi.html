@@ -195,7 +195,7 @@ var webstore = new Vue({
     data: {
         showProduct: true,
         lowHigh: 'Ascending',
-        lessons: [],
+        lessons: lessons,
         cart: [],
         searchInput: '',
         sortBy: '--Sort By--',
@@ -339,12 +339,7 @@ var webstore = new Vue({
         cartItemCount: function () {
             return this.cart.length
         },
-    },
-    created() {
-	fetch("http://localhost:3000/collection/lessons")
-		.then(response => response.json())
-		.then(data => (this.lessons = data));
-}
+    }
 });
 </script>
 
